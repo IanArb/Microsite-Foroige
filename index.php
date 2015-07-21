@@ -336,9 +336,9 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
     </div>
     <!-- LOCAL FOROIGE MAP -->
     <div class="container-fluid" id="local-map">
-        <h2 class="text-center">Local Foroige Map</h2>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div id="map-canvas"></div>
+        <p>
+        <iframe src="//batchgeo.com/map/7171b7fee21ee845696d867d344e761e" frameborder="0" width="100%" height="1000" style="border:2px solid #aaa;border-radius:10px;"></iframe>
+        </p><p><small>View <a href="https://batchgeo.com/map/7171b7fee21ee845696d867d344e761e">Foróige Listings 2015</a> in a full screen map</large></p>
     </div>
     <div class="footer">
         <div class="container">
