@@ -1,0 +1,204 @@
+/* =============================================================
+   NAVBAR CUSTOM STYLES
+ ============================================================ */
+.navbar.transparent.navbar-inverse{
+  border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+}
+
+.nav.navbar-nav li a{
+  color: #3498db;
+  font-weight: bolder;
+}
+
+.nav.navbar-nav > .btn{
+  background: transparent;
+}
+.nav.navbar-nav > .btn:hover{
+  background: transparent;
+}
+
+/* Modal styling */
+.modal-body-custom,
+.modal-header-custom,
+.modal-footer-custom{
+  background: #2c3e50;
+}
+.modal-title{
+  color: #ffffff;
+}
+.row-content a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.close-custom {
+  color: #ffffff;
+}
+
+.carousel-caption{
+
+}
+
+
+/* =============================================================
+   CARD LAYOUT CUSTOM STYLES
+ ============================================================ */
+#cards{
+	margin-top: 3%;
+}
+
+#cards, .row {
+	padding: 10px;
+}
+.panel-default > .panel-heading-fb{
+	background: #3b5998;
+}
+
+.panel-default > .panel-heading-tw{
+	background: #326ada;
+}
+
+.panel-default > .panel-heading-insta{
+	background: #3f729b;
+}
+.panel-default > .panel-heading-bbbs{
+	background: #8A2BE2;
+}
+.panel-default > .panel-heading-donate{
+	background: #FFD700;
+}
+.panel-default > .panel-heading-cs{
+	background: #228B22;
+}
+.panel-default > .panel-heading-youth{
+	background: #1E90FF;
+}
+.panel-default > .panel-heading-news{
+  background:   #A9A9A9;
+}
+.panel-default > .panel-heading-events{
+  background: black;
+}
+	.text-color-social{
+		color: #ffffff;
+	}
+	.text-color-bbbs{
+		color: #ffffff;
+	}
+  .text-color-events{
+    color: #ffffff;
+  }
+
+.fb-page, 
+.fb-page span, 
+.fb-page span iframe[style] { 
+    width: 100% !important; 
+}
+.fb-btn,
+.tw-btn,
+.insta-btn {
+    color: #fff;
+}
+
+.panel-heading-fb a:hover,
+.panel-heading-tw a:hover,
+.panel-heading-insta a:hover{
+  opacity: 0.8;
+}
+
+
+/* =============================================================
+   GOOGLE MAP LAYOUT CUSTOM STYLES
+ ============================================================ */
+ #map-canvas { 
+ 	height: 800px;
+  width:100%;
+ }
+ .controls {
+        margin-top: 16px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      .pac-container {
+        font-family: Roboto;
+      }
+
+      #type-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        padding: 5px 11px 0px 11px;
+      }
+
+      #type-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+/* =============================================================
+   GOOGLE MAP LAYOUT CUSTOM STYLES
+ ============================================================ */
+ .footer
+{
+    background: #2c3e50;
+    min-height: 150px;
+    color: #fff;
+}
+
+/* =============================================================
+   CAROUSEL OWL CUSTOM STYLES
+ ============================================================ */
+
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+}
+/* =============================================================
+   FOOTER CUSTOM STYLES
+ ============================================================ */
+#btn{
+
+    background: transparent;
+    color: #F2F2F2;
+
+    /* CSS Transition */
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+
+}
+
+#btn:hover {
+    background: #3498db;
+}
+
