@@ -7,13 +7,13 @@ require_once 'libs/phpmailer/PHPMailerAutoload.php';
 $errors = [];
 $result;
 
-if(isset($_POST['name'], $_POST['email'], $_POST['tel'], $_POST['county-select'])) {
+if(isset($_POST['name'], $_POST['email'], $_POST['tel'], $_POST['prog'])) {
 
 	$fields = [
 	'name' => $_POST['name'],
 	'email' => $_POST['email'],
 	'tel' => $_POST['tel'],
-	'county-select' => $_POST['county-select']
+	'prog' => $_POST['prog']
 	];
 
 	foreach($fields as $field => $data){
@@ -38,11 +38,11 @@ if(isset($_POST['name'], $_POST['email'], $_POST['tel'], $_POST['county-select']
 
 
 		$m->Subject = 'Registration for Volunteering';
-		$m->Body = '<p><strong>From:</strong> '. $fields['name']. '</p>'."\n".'<p><strong>Email:</strong> '. $fields['email']. '</p>'."\n".'<p><strong>Telephone:</strong> '. $fields['tel']. '</p>'."\n".'<p><strong>County:</strong> '. $fields['county-select']. '</p>';
+		$m->Body = '<p><strong>From:</strong> '. $fields['name']. '</p>'."\n".'<p><strong>Email:</strong> '. $fields['email']. '</p>'."\n".'<p><strong>Telephone:</strong> '. $fields['tel']. '</p>'."\n".'<p><strong>Programme:</strong> '. $fields['prog']. '</p>';
 
 		$m->From = $fields['email'];
 
-		$m->FromName = 'BBBS Registration';
+		$m->FromName = 'Volunteer Registration';
 
 		$m->AddAddress('ian.arbuckle18@gmail.com', 'Foroige');
 

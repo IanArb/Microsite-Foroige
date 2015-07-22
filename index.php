@@ -105,14 +105,6 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                     <button type="button" class="btn btn-primary btn-md">Touch me!</button>
                 </div>
             </div>
-            <div class="item">
-                <img src="img/citizenship.jpg">
-                    <div class="carousel-caption">
-                        <h3>Example 2</h3>
-                        <p>Did you know that cats plot against you? never trust them!</p>
-                        <button type="button" class="btn btn-primary btn-md">Click me!</button>
-                    </div>
-            </div>
         </div>
     </div>
     <!--MAIN-->
@@ -235,23 +227,13 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputCheck" class="col-lg-4 control-label">Choose programme(s)</label>
-                                                    <div class="col-lg-8">
-                                                        <div class="checkbox">
-                                                            <label> 
-                                                                <input name="prog" type="checkbox" value="Big Brother Big Sister" <?php echo isset($fields['prog']) ? ' value="' . e($fields['prog']) . '"' : '' ?> required/> Big Brother Big Sister
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox">
-                                                            <label> 
-                                                                <input name="prog" type="checkbox" value="Leadership" <?php echo isset($fields['prog']) ? ' value="' . e($fields['prog']) . '"' : '' ?> required/> Leadership
-                                                            </label>
-                                                        </div>
-                                                        <div class="checkbox">
-                                                            <label> 
-                                                                <input name="prog" type="checkbox" value="Citizenship" <?php echo isset($fields['prog']) ? ' value="' . e($fields['prog']) . '"' : '' ?> required/> Citizenship
-                                                            </label>
-                                                        </div>
+                                                    <label for="select" class="col-lg-2 control-label">Choose programme:</label>
+                                                    <div class="col-lg-10">
+                                                        <select class="form-control" id="select" name="prog" <?php echo isset($fields['prog']) ? ' value="' . e($fields['prog']) . '"' : '' ?> required>
+                                                            <option value="Big Brother Big Sister">Big Brother Big Sister</option>
+                                                            <option value="Citizenship">Citizenship</option>
+                                                            <option value="Leadership">Leadership</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -294,19 +276,19 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                         <div id="ei-events">
                             <!-- July -->
                             <div class="ei-event" data-start="2015-07-08 13:00" data-loc="St. Angela's College, Lough Gill, Co. Sligo">
-                                <div class="ei-name">Junior Baking Competition</div>
+                                <div class="ei-name">Baking Competition</div>
                                 <div class="ei-description">Regional Final (West) of National Junior Baking Competition</div>
                             </div>
                             <div class="ei-event" data-start="2015-07-11 12:00" data-loc="Our Lady's Bower Secondary School, Athlone, Co. Westmeath">
-                                <div class="ei-name">Junior Baking Competition</div>
+                                <div class="ei-name">Baking Competition</div>
                                 <div class="ei-description">Regional Final (Midlands) of National Junior Baking Competition</div>
                             </div>
                             <div class="ei-event" data-start="2015-07-11 12:00" data-loc="David College, Mallow, Co. Cork">
-                                <div class="ei-name">Junior Baking Competition</div>
+                                <div class="ei-name">Baking Competition</div>
                                 <div class="ei-description">Regional Final (South) of National Junior Baking Competition</div>
                             </div>
                             <div class="ei-event" data-start="2015-07-15 13:00" data-loc="Old Bawn Community School, Tallaght, Dublin 24">
-                                <div class="ei-name">Junior Baking Competition</div>
+                                <div class="ei-name">Baking Competition</div>
                                 <div class="ei-description">Regional Final (Dublin) of National Junior Baking Competition</div>
                             </div>
                             <!-- End of July -->
@@ -315,6 +297,37 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                                 <div class="ei-name">Leadership Conference</div>
                                 <div class="ei-description">Leadership Conference 2015: 4th - 8th August</div>
                             </div>
+                            <!-- September -->
+                            <div class="ei-event" data-start="2015-09-15" data-loc="NUI Maynooth, Co. Kildare">
+                                <div class="ei-name">Citizenship Project Deadline</div>
+                                <div class="ei-description">Citizenship project entry deadlines for project report form or blog</div>
+                            </div>
+                            <!-- End of September -->
+                            <!-- October -->
+                            <div class="ei-event" data-start="2015-10-24 12:00" data-loc="NUI Maynooth, Co. Kildare">
+                                <div class="ei-name">Youth Citizenship Awards</div>
+                                <div class="ei-description">Foroige Youth Citizenship Awards in partnership with Aldi Ireland.</div>
+                            </div>
+                            <!-- End of October -->
+                            <!-- November -->
+                            <div class="ei-event" data-start="2015-10-27 12:00" data-loc="NUI Maynooth, Co. Kildare">
+                                <div class="ei-name">Affiliation Deadline</div>
+                                <div class="ei-description">Affiliation Deadline</div>
+                            </div>
+                            <!-- End of November -->
+                            <!-- January -->
+                            <div class="ei-event" data-start="2016-01-16 12:00" data-loc="NUI Maynooth, Co. Kildare">
+                                <div class="ei-name">Regional Conference</div>
+                                <div class="ei-description">Regional Conference: </div>
+                            </div>
+                            <!-- End of January -->
+                            <!-- February -->
+                            <div class="ei-event" data-start="2016-02-26 12:00" data-loc="NUI Maynooth, Co. Kildare">
+                                <div class="ei-name">Annual Volunteers Conference</div>
+                                <div class="ei-description">Volunteers Conference: 26th - 28th</div>
+                            </div>
+                            <!-- End of Ferbruary -->
+                            
                         </div>
                     </div>
                 </div>
@@ -337,8 +350,8 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
     <!-- LOCAL FOROIGE MAP -->
     <div class="container-fluid" id="local-map">
         <h2 class="text-center">Local Foroige Map</h2>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div id="map-canvas"></div>
+        <p><iframe src="//batchgeo.com/map/7171b7fee21ee845696d867d344e761e" frameborder="0" width="100%" height="1000" style="border:2px solid #aaa;border-radius:10px;"></iframe></p>
+        <p><small>View <a href="https://batchgeo.com/map/7171b7fee21ee845696d867d344e761e">Foróige Listings 2015</a> in a full screen map</large></p>
     </div>
     <div class="footer">
         <div class="container">
