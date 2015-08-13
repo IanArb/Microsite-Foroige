@@ -1,26 +1,43 @@
 /* =============================================================
+   PRE-LOADING CUSTOM STYLES
+ ============================================================ */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../img/loader.gif) center no-repeat #fff;
+}
+
+/* =============================================================
    NAVBAR CUSTOM STYLES
  ============================================================ */
 .navbar.transparent.navbar-inverse{
-  border-width: 0px;
-    -webkit-box-shadow: 0px 0px;
-    box-shadow: 0px 0px;
-    background-color: rgba(0,0,0,0.0);
-    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
-    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
-    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-color: rgb(0, 0, 0);
 }
 
 .nav.navbar-nav li a{
-  color: #3498db;
-  font-weight: bolder;
+  color: #fff;
 }
+  .nav.navbar-nav li a:hover{
+    color: #3498db;
+  }
+ 
+
 
 .nav.navbar-nav > .btn{
   background: transparent;
 }
 .nav.navbar-nav > .btn:hover{
-  background: transparent;
+  background: #3498db;
+}
+
+#id{
+  margin-left: 150px;
 }
 
 /* Modal styling */
@@ -41,11 +58,9 @@
   color: #ffffff;
 }
 
-.carousel-caption{
-
+#home{
+  margin-top: -20px;
 }
-
-
 /* =============================================================
    CARD LAYOUT CUSTOM STYLES
  ============================================================ */
@@ -55,6 +70,10 @@
 
 #cards, .row {
 	padding: 10px;
+}
+
+.jumbotron{
+  background: url(../img/jumbotron-header.png);
 }
 .panel-default > .panel-heading-fb{
 	background: #3b5998;
@@ -71,7 +90,7 @@
 	background: #8A2BE2;
 }
 .panel-default > .panel-heading-donate{
-	background: #FFD700;
+	background: #f1c40f;
 }
 .panel-default > .panel-heading-cs{
 	background: #228B22;
@@ -83,22 +102,25 @@
   background:   #A9A9A9;
 }
 .panel-default > .panel-heading-events{
-  background: black;
+  background: #2c3e50;
 }
-	.text-color-social{
+.panel-default > .panel-heading-signup,
+.panel-default > .panel-heading-news{
+  background: #8e44ad;
+}
+	.text-color-white{
 		color: #ffffff;
 	}
-	.text-color-bbbs{
-		color: #ffffff;
-	}
-  .text-color-events{
-    color: #ffffff;
+
+  #donate-btn-color{
+    background: #f1c40f;
   }
 
 .fb-page, 
 .fb-page span, 
 .fb-page span iframe[style] { 
     width: 100% !important; 
+    margin: auto;
 }
 .fb-btn,
 .tw-btn,
@@ -112,63 +134,12 @@
   opacity: 0.8;
 }
 
+#local-map{
+  background: #fff;
+}
 
-/* =============================================================
-   GOOGLE MAP LAYOUT CUSTOM STYLES
- ============================================================ */
- #map-canvas { 
- 	height: 800px;
-  width:100%;
- }
- .controls {
-        margin-top: 16px;
-        border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        height: 32px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      }
-
-      #pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 400px;
-      }
-
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
-
-      .pac-container {
-        font-family: Roboto;
-      }
-
-      #type-selector {
-        color: #fff;
-        background-color: #4d90fe;
-        padding: 5px 11px 0px 11px;
-      }
-
-      #type-selector label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
-/* =============================================================
-   GOOGLE MAP LAYOUT CUSTOM STYLES
- ============================================================ */
- .footer
-{
-    background: #2c3e50;
-    min-height: 150px;
-    color: #fff;
+.map-container{
+  margin-top: 20px;
 }
 
 /* =============================================================
@@ -184,11 +155,15 @@
 /* =============================================================
    FOOTER CUSTOM STYLES
  ============================================================ */
+  .footer{
+    background: #2c3e50;
+    color: #fff;
+}
 #btn{
 
     background: transparent;
-    color: #F2F2F2;
-
+    color: #fff;
+    border: 1px solid #fff;
     /* CSS Transition */
     -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
     -moz-transition: background .2s ease-in-out, border .2s ease-in-out;

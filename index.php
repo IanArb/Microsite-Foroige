@@ -17,8 +17,27 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
     <title>Foroige</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="foroige" />
+    <meta name="description" content="Foroige Microsite" />
     <meta name="author" content="Foroige" />
+    <meta name="keywords" content="Microsite, Foroige, Youth, Charity"
+    <!-- Fav Icon for Web, Apple, and Android devices -->
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <!-- Twitter Bootstrap -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design for Bootstrap -->
@@ -37,6 +56,10 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
     <link href="css/owl.theme.css" rel="stylesheet">
     <link href="css/prettify.css" rel="stylesheet">
     <link href="css/owl.transitions.css" rel="stylesheet">
+    <!-- Pre loading -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script src="js/preloader.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
           <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
@@ -47,155 +70,220 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
 </head>
 
 <body>
+    <!-- Aminated Page Loader -->
+    <div class="se-pre-con"></div>
     <header>
-        <div class="navbar transparent navbar-inverse navbar-fixed-top">
+        <div id="top" class="navbar transparent navbar-inverse">
+	        <div class="navbar-header">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		            <span class="mdi-navigation-menu"></span>
+		        </button>
+		        <a href="#home" class="navbar-brand" href="javascript:void(0)">
+		        	<img alt="Brand" src="img/foroige-icon.png"/>
+		        </a>
+		    </div>
+		    <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#menu-modal"><span class="mdi-navigation-menu"></span></button>
+                    <!--<button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#menu-modal"><span class="mdi-navigation-menu"></span></button>-->
+                    <li><a href="#cards"><span class="mdi-communication-forum"></span> Newsfeed</a></li>
+                    <li><a href="#local-map"><span class="mdi-maps-place"></span>  Foroige Map</a></li>
+                    <li><a href="#contact"><span class="mdi-communication-email"></span> Contact Us</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.foroige.ie" target="_blank"><span class="mdi-maps-store-mall-directory"></span> Foroige Website</a></li>
                 </ul>
-        </div>
-        <!-- Navigatin Modal -->
-        <div class="modal fade" id="menu-modal">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header modal-header-custom">
-                        <button type="button" class="close close-custom" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <a data-toggle="tooltip" data-placement="bottom" title="www.foroige.ie" href="http://www.foroige.ie" target="_blank"><img src="img/foroige_logo.png" height="100" width="300" class="img-responsive center-block"/></a>
-                    </div>
-                    <div class="modal-body modal-body-custom">
-                       <div class="list-group-separator"></div>
-                       <div class="list-group">
-                            <div class="row-content">
-                                <a href="#home">
-                                    <button id="btn" class="btn btn-default btn-block"><i class="glyphicon glyphicon-home"></i> Home</button>
-                                </a>
-                            </div>
-                       </div>
-                       <div class="list-group-separator"></div>
-                       <div class="list-group">
-                            <div class="row-content">
-                                <a href="#cards">
-                                    <button id="btn" class="btn btn-default btn-block"><i class="mdi-communication-forum"></i> Feed</button>
-                                </a>
-                            </div>
-                       </div>
-                       <div class="list-group-separator"></div>
-                       <div class="list-group">
-                            <div class="row-content">
-                                <a href="#local-map"><button id="btn" class="btn btn-default btn-block btn-custom"><i class="mdi-maps-place"></i> Local Foroige Map</button></a>
-                            </div>
-                       </div>
-                    </div>
-                    <div class="modal-footer modal-footer-custom">
-                        <button id="btn" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
             </div>
         </div>
-        <!-- End of Navigation Modal -->
     </header>
     <div class="container-fuild" id="home">
         <div id="owl-demo" class="owl-carousel owl-theme">
-            <div class="item">
-                <img src="img/bbbs.png">
+        <div class="item">
+                <img src="img/carousel/img-01.png" alt="img-01">
                 <div class="carousel-caption">
-                    <h3>Example 1</h3>
-                    <p>Monkeys can live to 300 years</p>
-                    <button type="button" class="btn btn-primary btn-md">Touch me!</button>
+                    <h4>Welcome to Foróige Lite!</h4>
+                    <a href="#cards"><button id="btn" type="button" class="btn btn-primary btn-sm">Tell me more!</button></a>
                 </div>
             </div>
+            <div class="item">
+                <img src="img/carousel/img-02.png" alt="img-02">
+                <div class="carousel-caption">
+                    <h4>We are actively seeking volunteers</h4>
+                    <a href="#cards"><button id="btn" type="button" class="btn btn-primary btn-sm">Tell me more!</button></a>
+                </div>
+            </div>
+            
         </div>
     </div>
     <!--MAIN-->
-    <div id="cards" class="container">
-        <h2 class="text-center">Find out what's happening right now!</h2>
-        <!--ROW 1-->
+    <div id="cards" class="container-fluid">
+        
+        <!-- ROW 1 -->
         <div class="row">
-            <!-- FACEBOOK FEED -->
-            <div class="col-md-4 col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading panel-heading-fb">
-                        <a href="https://www.facebook.com/foroige" target="_blank"><i class="fa fa-facebook fa-3x fb-btn"><h4 class="text-center"><span class="text-color-social">Follow us on Facebook</span></h4></i></a>
-                    </div>
-                    <div class="panel-body">
-                        <div class="fb-page" data-href="https://www.facebook.com/foroige?fref=ts" data-small-header="false" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
-                            <div class="fb-xfbml-parse-ignore">
-                                <blockquote cite="https://www.facebook.com/foroige?fref=ts"><a href="https://www.facebook.com/foroige?fref=ts">Foróige</a></blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END OF FACEBOOK FEED -->
-            <!-- TWITTER FEED  -->
-            <div class="col-md-4 col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading panel-heading-tw">
-                        <a href="https://twitter.com/Foroige" target="_blank"><i class="fa fa-twitter fa-3x tw-btn"><h4 class="text-center"><span class="text-color-social">Follow us on Twitter</span></h4></i></a>
-                    </div>
-                    <div class="panel-body">
-                        <a class="twitter-timeline" href="https://twitter.com/Foroige" data-widget-id="619508300577701888">Tweets by @Foroige</a>
-                    </div>
-                </div>
-            </div>
-            <!-- END OF TWITTER FEED -->
-            <!-- INSTAGRAM FEED -->
-            <div class="col-md-4 col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading panel-heading-insta">
-                        <a href="https://instagram.com/foroige/" target="_blank"><i class="fa fa-instagram fa-3x insta-btn"><h4 class="text-center"><span class="text-color-social">Follow us on Instagram</span></h4></i></a>
-                    </div>
-                    <div class="panel-body">
-                        <iframe src="http://snapwidget.com/in/?u=Zm9yb2lnZXxpbnwxMjV8M3wzfHx5ZXN8NXxmYWRlSW58b25TdGFydHx5ZXN8eWVz&ve=100715" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>
-                    </div>
-                </div>
-            </div>
-            <!-- END OF INSTAGRAM FEED -->
+            
         </div>
         <!-- END OF ROW 1 -->
-        <!-- ROW TWO -->
+        <!--ROW 2-->
         <div class="row">
-            <!-- NEWSLETTER SIGN-UP -->
+            <!-- RSS feed -->
             <div class="col-md-4 col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading panel-heading-news">
-                        <h4 class="text-center">Sign-Up for Newsletter</h4>
+                <div class="panel panel-default shadow-z-4">
+                    <div class="panel-heading panel-heading-events">
+                        <span class="text-color-white"><h4 class="text-center">News Feed</h4></span>
                     </div>
                     <div class="panel-body">
-                        <form class="form">
-                            <div class="input-group text-center">
-                                <input class="form-control input-lg" placeholder="Enter your email address" type="text">
-                                <span class="input-group-btn"><button class="btn btn-lg btn-primary" type="button">OK</button></span>
-                            </div>
-                        </form>
+                        <!-- start feedwind code -->
+                        <!-- RSS feed -->
+                        <script type="text/javascript">
+                        document.write('\x3Cscript type="text/javascript" src="' 
+                            + ('https:' == document.location.protocol ? 'https://' : 'http://') 
+                            + 'feed.mikle.com/js/rssmikle.js">\x3C/script>');
+                        </script>
+                        <script src="js/rss.js"></script>
+                        <div style="font-size:10px; text-align:center; ">
+                            <a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS Feed Widget</a>
+                            <!--Please display the above link in your web page according to Terms of Service.-->
+                        </div><!-- end feedwind code -->
                     </div>
                 </div>
+                <!-- END OF RSS FEED -->
             </div>
-            <!-- END OF NEWSLETTER SIGN-UP -->
-            <!-- DONATE -->
+             <!-- FOROIGE CALENDAR -->
             <div class="col-md-4 col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading panel-heading-donate">
-                        <h4 class="text-center">Donate Today!</h4>
+                <div class="panel panel-default shadow-z-4">
+                    <div class="panel-heading panel-heading-events">
+                        <span class="text-color-white"><h4 class="text-center">Upcoming Events</h4></span>
                     </div>
                     <div class="panel-body">
-                        <div class="col-lg-12">
-                            <button type="button" class="btn btn-primary btn-block">Donate</button>
+                        <div id="ei-events">
+                            <!-- July -->
+                            <div class="ei-event" data-start="2015-07-08 13:00" data-loc="St. Angela's College, Lough Gill, Co. Sligo">
+                                <div class="ei-name">Baking Competition</div>
+                                <div class="ei-description">Regional Final (West) of National Junior Baking Competition</div>
+                            </div>
+                            <div class="ei-event" data-start="2015-07-11 12:00" data-loc="Our Lady's Bower Secondary School, Athlone, Co. Westmeath">
+                                <div class="ei-name">Baking Competition</div>
+                                <div class="ei-description">Regional Final (Midlands) of National Junior Baking Competition</div>
+                            </div>
+                            <div class="ei-event" data-start="2015-07-11 12:00" data-loc="David College, Mallow, Co. Cork">
+                                <div class="ei-name">Baking Competition</div>
+                                <div class="ei-description">Regional Final (South) of National Junior Baking Competition</div>
+                            </div>
+                            <div class="ei-event" data-start="2015-07-15 13:00" data-loc="Old Bawn Community School, Tallaght, Dublin 24">
+                                <div class="ei-name">Baking Competition</div>
+                                <div class="ei-description">Regional Final (Dublin) of National Junior Baking Competition</div>
+                            </div>
+                            <!-- End of July -->
+                            <!-- August -->
+                            <div class="ei-event" data-start="2015-08-04 12:00" data-loc="NUI Maynooth, Co. Kildare">
+                                <div class="ei-name">Leadership Conference</div>
+                                <div class="ei-description">Leadership Conference 2015: 4th - 8th August</div>
+                            </div>
+                            <!-- September -->
+                            <div class="ei-event" data-start="2015-09-15" data-loc="NUI Maynooth, Co. Kildare">
+                                <div class="ei-name">Citizenship Project Deadline</div>
+                                <div class="ei-description">Citizenship project entry deadlines for project report form or blog</div>
+                            </div>
+                            <!-- End of September -->
+                            <!-- October -->
+                            <div class="ei-event" data-start="2015-10-24 12:00" data-loc="NUI Maynooth, Co. Kildare">
+                                <div class="ei-name">Youth Citizenship Awards</div>
+                                <div class="ei-description">Foroige Youth Citizenship Awards in partnership with Aldi Ireland.</div>
+                            </div>
+                            <!-- End of October -->
+                            <!-- November -->
+                            <div class="ei-event" data-start="2015-10-27 12:00" data-loc="NUI Maynooth, Co. Kildare">
+                                <div class="ei-name">Affiliation Deadline</div>
+                                <div class="ei-description">Affiliation Deadline</div>
+                            </div>
+                            <!-- End of November -->
+                            <!-- January -->
+                            <div class="ei-event" data-start="2016-01-16 12:00" data-loc="NUI Maynooth, Co. Kildare">
+                                <div class="ei-name">Regional Conference</div>
+                                <div class="ei-description">Regional Conference: </div>
+                            </div>
+                            <!-- End of January -->
+                            <!-- February -->
+                            <div class="ei-event" data-start="2016-02-26 12:00" data-loc="NUI Maynooth, Co. Kildare">
+                                <div class="ei-name">Annual Volunteers Conference</div>
+                                <div class="ei-description">Volunteers Conference: 26th - 28th</div>
+                            </div>
+                            <!-- End of Ferbruary -->
+                            
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- END OF DONATE -->
-            <!-- VOLUNTEER SIGN-UP -->
+            <!--END OF FOROIGE CALENDAR -->
+            <!-- YouTube Media -->
             <div class="col-md-4 col-sm-6">
                 <div class="panel panel-default">
                     <div class="panel-heading panel-heading-news">
-                        <h4 class="text-center">Want to Volunteer?</h4>
+                        <h4 class="text-center text-color-white">Foroige Fifty News</h4>
+                    </div>
+                    <div class="panel-body">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/playlist?list=PL00RN8WonDn--jpn2lPpo8nZkh57I_wVb"></iframe>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of YouTube Media -->
+        </div>
+        <!-- END OF ROW 2 -->
+        <!-- ROW 3 -->
+        <div class="row">
+            <!-- POLL 1 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="panel panel-default shadow-z-4">
+                    <div class="panel-heading panel-heading-news">
+                        <h4 class="text-center text-color-white">What's your involvement in Foroige?</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div id="poll" class="poll-1">
+                            <form>
+                                <div id="poll" class="radio radio-primary">
+                                    <label>
+                                        <input type="radio" name="vote" value="0"  onClick="getVote(this.value)">
+                                        Foroige Member
+                                    </label>
+                                </div>
+                                <div id="poll" class="radio radio-primary">
+                                    <label>
+                                        <input type="radio" name="vote" value="1"  onClick="getVote(this.value)">
+                                        Parent
+                                    </label>
+                                </div>
+                                <div id="poll" class="radio radio-primary">
+                                    <label>
+                                        <input type="radio" name="vote" value="2"  onClick="getVote(this.value)">
+                                        Volunteer
+                                    </label>
+                                </div>
+                                <div id="poll" class="radio radio-primary">
+                                    <label>
+                                        <input type="radio" name="vote" value="3" onClick="getVote(this.value)">
+                                        Not a member
+                                    </label>
+                                </div>
+                            </form>
+                            <div id="poll" class="col-lg-12">
+                                <h4 class="text-center">Check the box</h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- END OF POLL 1 -->
+            <!-- VOLUNTEER SIGN-UP -->
+            <div class="col-md-4 col-sm-6">
+                <div class="panel panel-default shadow-z-4">
+                    <div class="panel-heading panel-heading-signup">
+                        <h4 class="text-center text-color-white">Want to Volunteer?</h4>
                     </div>
                     <div class="panel-body">
                         <div class="col-lg-12">
-                            <button type="button" data-toggle="modal" data-target="#form-modal" class="btn btn-primary btn-block">Sign Up Now</button>
+                            <button type="button" data-toggle="modal" data-target="#form-modal" class="btn btn-info btn-block">Sign Up Now</button>
                         </div>
                         <div id="form-modal" class="modal">
                             <div class="modal-dialog modal-lg">
@@ -262,105 +350,101 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- END OF ROW 2 -->
-        <!-- ROW 3 -->
-        <div class="row">
-            <!-- FOROIGE CALENDAR -->
-            <div class="col-md-6 col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading panel-heading-events">
-                        <span class="text-color-social"><h4 class="text-center">Upcoming Events</h4></span>
+            <!-- POLL 2 -->
+        	<div class="col-md-4 col-sm-6">
+                <div class="panel panel-default shadow-z-4">
+                    <div class="panel-heading panel-heading-news">
+                        <h4 class="text-center text-color-white">Does Foroige meet your expectations?</h4>
                     </div>
                     <div class="panel-body">
-                        <div id="ei-events">
-                            <!-- July -->
-                            <div class="ei-event" data-start="2015-07-08 13:00" data-loc="St. Angela's College, Lough Gill, Co. Sligo">
-                                <div class="ei-name">Baking Competition</div>
-                                <div class="ei-description">Regional Final (West) of National Junior Baking Competition</div>
+                        <div id="poll-2" class="poll-2">
+                            <div id="poll-2" class="radio radio-primary">
+                                <label>
+                                    <input type="radio" name="vote_opinion" value="0" onClick="getVoteSecond(this.value)" >
+                                    Yes
+                                </label>
                             </div>
-                            <div class="ei-event" data-start="2015-07-11 12:00" data-loc="Our Lady's Bower Secondary School, Athlone, Co. Westmeath">
-                                <div class="ei-name">Baking Competition</div>
-                                <div class="ei-description">Regional Final (Midlands) of National Junior Baking Competition</div>
+                            <div id="poll-2" class="radio radio-primary">
+                                <label>
+                                    <input type="radio" name="vote_opinion" value="1" onClick="getVoteSecond(this.value)">
+                                    Somewhat
+                                </label>
                             </div>
-                            <div class="ei-event" data-start="2015-07-11 12:00" data-loc="David College, Mallow, Co. Cork">
-                                <div class="ei-name">Baking Competition</div>
-                                <div class="ei-description">Regional Final (South) of National Junior Baking Competition</div>
+                            <div id="poll-2" class="radio radio-primary">
+                                <label>
+                                    <input type="radio" name="vote_opinion" value="2" onClick="getVoteSecond(this.value)" >
+                                    No
+                                </label>
                             </div>
-                            <div class="ei-event" data-start="2015-07-15 13:00" data-loc="Old Bawn Community School, Tallaght, Dublin 24">
-                                <div class="ei-name">Baking Competition</div>
-                                <div class="ei-description">Regional Final (Dublin) of National Junior Baking Competition</div>
+                            <div id="poll-2" class="col-lg-12">
+                            	<h4 class="text-center">Check the box</h4>
+                        	</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- END OF POLL 2 -->
+            
+        </div>
+        <div class="row">
+            <!-- FACEBOOK FEED -->
+            <div class="col-md-4 col-sm-6">
+                <div class="panel panel-default shadow-z-4">
+                    <div class="panel-heading panel-heading-fb">
+                        <a href="https://www.facebook.com/foroige" target="_blank"><i class="fa fa-facebook fa-3x fb-btn"><h4 class="text-center"><span class="text-color-social">Follow us on Facebook</span></h4></i></a>
+                    </div>
+                    <div class="panel-body">
+                        <div class="fb-page" data-href="https://www.facebook.com/foroige?fref=ts" data-small-header="false" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+                            <div class="fb-xfbml-parse-ignore">
+                                <blockquote cite="https://www.facebook.com/foroige?fref=ts"><a href="https://www.facebook.com/foroige?fref=ts">Foróige</a></blockquote>
                             </div>
-                            <!-- End of July -->
-                            <!-- August -->
-                            <div class="ei-event" data-start="2015-08-04 12:00" data-loc="NUI Maynooth, Co. Kildare">
-                                <div class="ei-name">Leadership Conference</div>
-                                <div class="ei-description">Leadership Conference 2015: 4th - 8th August</div>
-                            </div>
-                            <!-- September -->
-                            <div class="ei-event" data-start="2015-09-15" data-loc="NUI Maynooth, Co. Kildare">
-                                <div class="ei-name">Citizenship Project Deadline</div>
-                                <div class="ei-description">Citizenship project entry deadlines for project report form or blog</div>
-                            </div>
-                            <!-- End of September -->
-                            <!-- October -->
-                            <div class="ei-event" data-start="2015-10-24 12:00" data-loc="NUI Maynooth, Co. Kildare">
-                                <div class="ei-name">Youth Citizenship Awards</div>
-                                <div class="ei-description">Foroige Youth Citizenship Awards in partnership with Aldi Ireland.</div>
-                            </div>
-                            <!-- End of October -->
-                            <!-- November -->
-                            <div class="ei-event" data-start="2015-10-27 12:00" data-loc="NUI Maynooth, Co. Kildare">
-                                <div class="ei-name">Affiliation Deadline</div>
-                                <div class="ei-description">Affiliation Deadline</div>
-                            </div>
-                            <!-- End of November -->
-                            <!-- January -->
-                            <div class="ei-event" data-start="2016-01-16 12:00" data-loc="NUI Maynooth, Co. Kildare">
-                                <div class="ei-name">Regional Conference</div>
-                                <div class="ei-description">Regional Conference: </div>
-                            </div>
-                            <!-- End of January -->
-                            <!-- February -->
-                            <div class="ei-event" data-start="2016-02-26 12:00" data-loc="NUI Maynooth, Co. Kildare">
-                                <div class="ei-name">Annual Volunteers Conference</div>
-                                <div class="ei-description">Volunteers Conference: 26th - 28th</div>
-                            </div>
-                            <!-- End of Ferbruary -->
-                            
                         </div>
                     </div>
                 </div>
             </div>
-            <!--END OF FOROIGE CALENDAR -->
-            <!-- YouTube Media -->
-            <div class="col-md-6 col-sm-6">
-                <div class="panel panel-default">
+            <!-- END OF FACEBOOK FEED -->
+            <!-- TWITTER FEED  -->
+            <div class="col-md-4 col-sm-6">
+                <div class="panel panel-default shadow-z-4">
+                    <div class="panel-heading panel-heading-tw">
+                        <a href="https://twitter.com/Foroige" target="_blank"><i class="fa fa-twitter fa-3x tw-btn"><h4 class="text-center"><span class="text-color-social">Follow us on Twitter</span></h4></i></a>
+                    </div>
                     <div class="panel-body">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/playlist?list=PL00RN8WonDn9iGd4utWCyxseHM4W4kunw"></iframe>
-                            </div>
+                        <a class="twitter-timeline" href="https://twitter.com/Foroige" data-widget-id="619508300577701888">Tweets by @Foroige</a>
                     </div>
                 </div>
             </div>
-            <!-- End of YouTube Media -->
+            <!-- END OF TWITTER FEED -->
+            <!-- INSTAGRAM FEED -->
+            <div class="col-md-4 col-sm-6">
+                <div class="panel panel-default shadow-z-4">
+                    <div class="panel-heading panel-heading-insta">
+                        <a href="https://instagram.com/foroige/" target="_blank"><i class="fa fa-instagram fa-3x insta-btn"><h4 class="text-center"><span class="text-color-social">Follow us on Instagram</span></h4></i></a>
+                    </div>
+                    <div class="panel-body">
+                        <iframe src="http://snapwidget.com/in/?u=Zm9yb2lnZXxpbnwxMjV8M3wzfHx5ZXN8NXxmYWRlSW58b25TdGFydHx5ZXN8eWVz&ve=100715" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF INSTAGRAM FEED -->
         </div>
-        <!--END OF ROW 3-->
-    </div>
+        
+        </div>
+    <!--END OF CONTAINER -->
+
     <!-- LOCAL FOROIGE MAP -->
     <div class="container-fluid" id="local-map">
-        <h2 class="text-center">Local Foroige Map</h2>
-        <p><iframe src="//batchgeo.com/map/7171b7fee21ee845696d867d344e761e" frameborder="0" width="100%" height="1000" style="border:2px solid #aaa;border-radius:10px;"></iframe></p>
-        <p><small>View <a href="https://batchgeo.com/map/7171b7fee21ee845696d867d344e761e">Foróige Listings 2015</a> in a full screen map</large></p>
+        <div class="map-container">
+            <p><iframe src="//batchgeo.com/map/7171b7fee21ee845696d867d344e761e" frameborder="0" width="100%" height="1000" style="border:2px solid #aaa;"></iframe></p>
+            <p><small>View <a href="https://batchgeo.com/map/7171b7fee21ee845696d867d344e761e">Foróige Listings 2015</a> in a full screen map</large></p>
+        </div>
     </div>
-    <div class="footer">
+    <div id="contact" class="footer">
         <div class="container">
             <div class="row row-centered">
                 <footer class="text-center">
-                    &copy; Foroige
-                    <br />
-                    <br>
-                    <a href="#home">
+                    <a href="#top">
                         <button id="btn" type="button" class="btn btn-default btn-md">
                             <span class="mdi-navigation-arrow-drop-up"></span> Back to top
                         </button>
@@ -371,11 +455,48 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                         </button>
                     </a>
                 </footer>
+                <br><br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p class="text-center">
+                            Foróige, the National Youth Development Organisation
+                            <br>
+                            Block 12D, Joyce Way, Park West,
+                            <br>
+                            Dublin 12
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <p class="text-center">
+                            Foróige is a Company Limited by Guarantee not having share capital. It is registered in Dublin, 
+                            Ireland with a registered number of 552248 as per the company's Certificate of Incorporation.
+                            <br>
+                            <br>
+                            Registered Charity Number: CHY 5359
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <p class="text-center">
+                            Call us:     01 630 1560
+                            <br>
+                            Fax us:     01 630 1568
+                            <br>
+                            Email us:  <a href="mailto:info@foroige.ie">info@foroige.ie</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h4 class="text-center">&copy; Foroige 2015. All Rights Reserved.</h4>
+                </div>
+                 
             </div>
         </div>
     </div>
     <!-- jQuery -->
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>
     $(function() {
         $('a[href*=#]:not([href=#])').click(function() {
@@ -391,46 +512,25 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
             }
         });
     });
-
-    $(document).ready(function() {
-        setInterval(function() {
-            $('#fade').fadeIn(1000);
-        }, 4300);
-    });
     </script>
     <!-- Owl Carousel -->
-    <script src="js/owl.carousel.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script src="js/prettify.js"></script>
     <script src="js/bootstrap-transition.js"></script>
-    <script src="js/application.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-
-        var owl = $("#owl-demo");
-
-        owl.owlCarousel({
-            autoPlay: 5000, //set autoplay to 5 seconds
-            navigation: false,
-            singleItem: true,
-            transitionStyle: "goDown",
-            responsive: true,
-            responsiveRefreshRate: 200,
-            responsiveBaseWidth: window
-        });
-
-    })
-    </script>
+    
+    <script src="js/owl.carousel.controls.js"></script>
     <script type="text/javascript">
         $(function () {
           $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
+    <!-- Polls -->
+    <script src="ajax/poll.js"></script>
+    <script src="ajax/poll_second.js"></script>
     <!-- FACEBOOK PAGE PLUGIN -->
-    <script src="js/facebook-plugin.js"></script>
-    <!-- END OF FACEBOOK PAGE PLUGIN -->
+    <script defer src="js/facebook-plugin.js"></script>
     <!-- TWITTER PAGE PLUGIN -->
     <script src="js/twitter.js"></script>
-    <!-- END OF TWITTER PAGE PLUGIN -->
     <script src="http://snapwidget.com/js/snapwidget.js"></script>
     <!-- MATERIAL DESIGN SOURCE CODE -->
     <script src="js/source-code.js"></script>
@@ -439,18 +539,17 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
     <!-- Material Design for Bootstrap -->
     <script src="dist/js/material.min.js"></script>
     <script src="dist/js/ripples.min.js"></script>
-    <script>
-    $.material.init();
+    <script type="text/javascript">
+        $.material.init();
     </script>
     <!-- Sliders -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
     <script src="js/UIslider.js"></script>
     <!-- Dropdown.js -->
     <script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
-    <script>
+    <script type="text/javascript">
     $("#dropdown-menu select").dropdown();
     </script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <!--Calendar Script -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
     <script src="js/eventify.js"></script>
@@ -460,10 +559,8 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
         locale: "en"
     });
     </script>
-    <!--Google Maps API v3 -->
-    <script src="js/googlemaps.js"></script>
     <!-- FORM SCRIPTS -->
-    <script src="js/mailgun.js"></script>
+    <script src="js/mailgun.js"></script> 
 </body>
 
 </html>
