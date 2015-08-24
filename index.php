@@ -40,22 +40,17 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
     <meta name="theme-color" content="#ffffff">
     <!-- Twitter Bootstrap -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Material Design for Bootstrap -->
     <link href="dist/css/roboto.min.css" rel="stylesheet">
     <link href="dist/css/material-fullpalette.min.css" rel="stylesheet">
     <link href="dist/css/ripples.min.css" rel="stylesheet">
-    <!-- Custom styles -->
-    <link href="css/custom.css" rel="stylesheet">
+    <!-- Main css -->
+    <link href="css/main.css" rel="stylesheet">
+    <!-- Font awesome -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- Dropdown.js -->
     <link href="http://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.css" rel="stylesheet">
-    <!-- Upcoming Event Calendar -->
-    <link rel="stylesheet" href="css/eventify.css">
-    <!-- Owl Carousel Assets -->
-    <link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
-    <link href="css/prettify.css" rel="stylesheet">
-    <link href="css/owl.transitions.css" rel="stylesheet">
     <!-- Pre loading -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
@@ -71,7 +66,7 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
 
 <body>
     <!-- Aminated Page Loader -->
-    <div class="se-pre-con"></div>
+    <div class="pre-loader"></div>
     <header>
         <div id="top" class="navbar transparent navbar-inverse">
 	        <div class="navbar-header">
@@ -84,8 +79,7 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
 		    </div>
 		    <div class="navbar-collapse collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav">
-                    <!--<button class="btn btn-primary btn-lg" type="button" data-toggle="modal" data-target="#menu-modal"><span class="mdi-navigation-menu"></span></button>-->
-                    <li><a href="#cards"><span class="mdi-communication-forum"></span> Newsfeed</a></li>
+                    <li><a href="#cards"><span class="mdi-communication-forum"></span> Stream</a></li>
                     <li><a href="#local-map"><span class="mdi-maps-place"></span>  Foroige Map</a></li>
                     <li><a href="#contact"><span class="mdi-communication-email"></span> Contact Us</a></li>
                 </ul>
@@ -147,8 +141,22 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                 </div>
                 <!-- END OF RSS FEED -->
             </div>
-             <!-- FOROIGE CALENDAR -->
-            <div class="col-md-4 col-sm-6">
+            <!-- YouTube Media -->
+            <div class="col-md-5 col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading panel-heading-news">
+                        <h4 class="text-center text-color-white">Foroige Fifty News</h4>
+                    </div>
+                    <div class="panel-body">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/playlist?list=PL00RN8WonDn--jpn2lPpo8nZkh57I_wVb"></iframe>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of YouTube Media -->
+            <!-- FOROIGE CALENDAR -->
+            <div class="col-md-3 col-sm-6">
                 <div class="panel panel-default shadow-z-4">
                     <div class="panel-heading panel-heading-events">
                         <span class="text-color-white"><h4 class="text-center">Upcoming Events</h4></span>
@@ -214,20 +222,6 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                 </div>
             </div>
             <!--END OF FOROIGE CALENDAR -->
-            <!-- YouTube Media -->
-            <div class="col-md-4 col-sm-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading panel-heading-news">
-                        <h4 class="text-center text-color-white">Foroige Fifty News</h4>
-                    </div>
-                    <div class="panel-body">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/playlist?list=PL00RN8WonDn--jpn2lPpo8nZkh57I_wVb"></iframe>
-                            </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End of YouTube Media -->
         </div>
         <!-- END OF ROW 2 -->
         <!-- ROW 3 -->
@@ -267,7 +261,8 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                                 </div>
                             </form>
                             <div id="poll" class="col-lg-12">
-                                <h4 class="text-center">Check the box</h4>
+                                <h4 class="text-center"><i class="fa fa-question fa-lg"></i></h4>
+                                <h4 class="text-center">Check the radio button to cast your vote</h4>
                             </div>
                         </div>
                         
@@ -276,7 +271,7 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
             </div>
             <!-- END OF POLL 1 -->
             <!-- VOLUNTEER SIGN-UP -->
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-4 col-sm-6 col-push-1">
                 <div class="panel panel-default shadow-z-4">
                     <div class="panel-heading panel-heading-signup">
                         <h4 class="text-center text-color-white">Want to Volunteer?</h4>
@@ -296,25 +291,25 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                                         <form id="mailgun" name="form" role="form" method="POST" class="form-horizontal">
                                             <fieldset>
                                                 <Legend>Sign Up below for our volunteer programmes</Legend>
-                                                <div class="form-group">
+                                                <div class="form-group-material-blue-600">
                                                     <label for="inputName" class="col-lg-2 control-label">Name</label>
                                                     <div class="col-lg-10">
                                                         <input name="name" class="form-control floating-label" id="inputName" placeholder="Enter Name" type="name" <?php echo isset($fields['name']) ? ' value="' . e($fields['name']) . '"' : '' ?> required/>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                <div class="form-group-material-blue-600">
                                                     <label for="inputEmail" class="col-lg-2 control-label">Email:</label>
                                                     <div class="col-lg-10">
                                                         <input name="email" class="form-control floating-label" id="inputEmail" placeholder="Enter email" type="email" <?php echo isset($fields['email']) ? ' value="' . e($fields['email']) . '"' : '' ?> required/>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                <div class="form-group-material-blue-600">
                                                     <label for="inputTel" class="col-lg-2 control-label">Telephone:</label>
                                                     <div class="col-lg-10">
                                                         <input name="tel" class="form-control floating-label" id="inputTel" placeholder="Enter telephone number" type="telephone" <?php echo isset($fields['tel']) ? ' value="' . e($fields['tel']) . '"' : '' ?> required />
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                <div class="form-group-material-blue-600">
                                                     <label for="select" class="col-lg-2 control-label">Choose programme:</label>
                                                     <div class="col-lg-10">
                                                         <select class="form-control" id="select" name="prog" <?php echo isset($fields['prog']) ? ' value="' . e($fields['prog']) . '"' : '' ?> required>
@@ -324,13 +319,13 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                <div class="form-group-material-blue-600">
                                                     <div class="col-lg-10 col-lg-offset-2">
-                                                        <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
+                                                        <button type="submit" name="submit" class="btn btn-info btn-block">Submit</button>
                                                     </div>
                                                 </div>
                                                 <?php if(!empty($errors)): ?>
-                                                <div class="form-group">
+                                                <div class="form-group-material-blue-600">
                                                     <div class="col-lg-10 col-lg-offset-2">
                                                         <div class="alert alert-danger"><?php echo implode(', ', $errors); ?></div>
                                                     </div>
@@ -341,7 +336,7 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
                                     </div>
 
                                 </div>
@@ -377,7 +372,8 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                                 </label>
                             </div>
                             <div id="poll-2" class="col-lg-12">
-                            	<h4 class="text-center">Check the box</h4>
+                            	<h4 class="text-center"><i class="fa fa-question fa-lg"></i></h4>
+                                <h4 class="text-center">Check the radio button to cast your vote</h4>
                         	</div>
                         </div>
                         
@@ -395,7 +391,7 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
                         <a href="https://www.facebook.com/foroige" target="_blank"><i class="fa fa-facebook fa-3x fb-btn"><h4 class="text-center"><span class="text-color-social">Follow us on Facebook</span></h4></i></a>
                     </div>
                     <div class="panel-body">
-                        <div class="fb-page" data-href="https://www.facebook.com/foroige?fref=ts" data-small-header="false" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+                        <div class="fb-page" width="1000px" data-href="https://www.facebook.com/foroige?fref=ts" data-small-header="false" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
                             <div class="fb-xfbml-parse-ignore">
                                 <blockquote cite="https://www.facebook.com/foroige?fref=ts"><a href="https://www.facebook.com/foroige?fref=ts">Foróige</a></blockquote>
                             </div>
@@ -552,7 +548,7 @@ $result = isset($_SESSION['result']) ? $_SESSION['result'] : [];
     </script>
     <!--Calendar Script -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
-    <script src="js/eventify.js"></script>
+    <script src="js/eventify.min.js"></script>
     <script type="text/javascript">
     $("#ei-events").eventify({
         theme: "dark",

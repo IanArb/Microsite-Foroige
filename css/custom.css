@@ -3,7 +3,7 @@
  ============================================================ */
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
+.pre-loader {
   position: fixed;
   left: 0px;
   top: 0px;
@@ -13,6 +13,9 @@
   background: url(../img/loader.gif) center no-repeat #fff;
 }
 
+body{
+  background-color: #fff;
+}
 /* =============================================================
    NAVBAR CUSTOM STYLES
  ============================================================ */
@@ -176,4 +179,8 @@
 #btn:hover {
     background: #3498db;
 }
+
+  .floating-label {
+    color: #03a9f4;
+  }
 

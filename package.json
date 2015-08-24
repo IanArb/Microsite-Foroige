@@ -1,0 +1,23 @@
+{
+  "name": "foroige",
+  "version": "1.0.0",
+  "description": "Microsite for Foroige",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IanArb/Microsite-Foroige.git"
+  },
+  "author": "Ian Arbuckle (Intern)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IanArb/Microsite-Foroige/issues"
+  },
+  "homepage": "https://github.com/IanArb/Microsite-Foroige#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.13.0"
+  }
+}
